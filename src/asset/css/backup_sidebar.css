@@ -1,0 +1,158 @@
+.container-layout{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    color: #3f3f3f;
+}
+.container-navbar{
+    position: fixed;
+    display: block;
+    height: 100vw;
+    width: calc(2/12*100%);
+    background-color: var(--bs-gray-900);
+    color: var(--light);
+    overflow: auto;
+    border-right: solid 3px var(--bs-border-color-translucent);
+}
+.navbar-logo{
+    margin: 20px 0px;
+    width: 100%;
+    height: 20vh;
+    padding: 0px 20px;
+}
+.image-logo{
+    width: 100%;
+    height: auto;
+
+}
+.container-content{
+    position: relative;
+    margin-left: calc(2/12*100%);
+    width: calc(10/12*100%);
+    background-color: var(--bs-gray-300);
+    height: 100vh;
+    padding: 10px;
+}
+.list-navbar{
+    margin: 10px 0 0 0;
+    margin-top: 10px;
+
+}
+.navbars{
+    position: relative;
+    margin-top: 5vh;    
+}
+nav > div > ul >li {
+    margin: 0px 10px;
+}
+/* nav >div> ul > li:not(:has(> div.navbar-sub.show))::before{
+    content: "\f0da";
+    font-family: "Font Awesome 5 Free";
+    float: right;
+    font-weight: 800;
+}
+nav >div> ul > li:has(> div.navbar-sub.show)::before{
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free";
+    float: right;
+    font-weight: 800;
+}
+
+
+nav >div> ul > li:not(:has(> div.navbar-sub.show))::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 98%;
+    background-color: var(--bs-gray-600);
+    left: 0;
+    margin-top: 35px;
+} */
+
+.navbar-nav > .nav-link > i > div {
+    width: 30px;
+    text-align: center;
+}
+
+
+.navbar-wrapper{
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 0px 10px;
+}
+/* Custom Scrollbar untuk WebKit (Chrome, Safari) */
+.navbar-wrapper::-webkit-scrollbar {
+    width: 5px; /* Lebar scrollbar */
+    border-radius: 5px;
+  }
+  
+  .navbar-wrapper::-webkit-scrollbar-thumb {
+    background-color: #0f5e39; /* Warna thumb scrollbar */
+    border-radius: 5px; /* Radius sudut thumb scrollbar */
+  }
+  
+  .navbar-wrapper::-webkit-scrollbar-track {
+    background-color: #f8f9fa; /* Warna track scrollbar */
+    border-radius: 12px;
+  }
+.navbar-nav{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 10px 0;
+    width: 100%;
+}
+.nav-link{
+    padding: 10px 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.text-disabled{
+    color: var(--bs-gray-600);
+    margin-left: 10px;
+}
+
+.navbar-sub{
+    background-color: var( --bs-gray-300);
+    border-radius: 12px;
+    margin: 15px 0 0 0;
+    padding: 15px 0 0 0;
+    display: none;
+    height: 0;
+    width: 14vw;
+    padding: 0 21px;
+}
+.navbar-sub.show{
+    display: block;
+    height: auto;
+}
+div > span > ul{
+    gap :0px !important;
+}
+.font-link {
+    color:var(--bs-gray-900);
+    margin-left: 20px;
+}
+.font-link.active{
+    color:var(--bs-gray-600);
+}
+.font-link:hover{
+    color: var(--bs-gray-600);
+}
+
+nav > ul > hr{
+    border: 1px solid var(--bs-gray-700);
+}

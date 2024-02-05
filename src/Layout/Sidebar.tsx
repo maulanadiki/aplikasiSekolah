@@ -1,45 +1,50 @@
-"use client"
+"use client";
 import React, { useState } from "react";
+import Link from "next/link";
+import { MainMenu } from "./MainMenu";
 
 interface SidebarProps {
   // Define prop types if needed
 }
 
 const Sidebar: React.FC<SidebarProps> = () => {
-  const [showSubNavbar, setShowSubNavbar] = useState<boolean>(false);
+  // const [showSubNavbar, setShowSubNavbar] = useState<boolean>(false);
 
-  const handleItemClick = () => {
-    setShowSubNavbar(!showSubNavbar);
-  };
+  // const handleClick = () => {
+    // setShowSubNavbar(!showSubNavbar);
+  // };
+ const [showSubNavbar, setShowSubNavbar] = useState(null);
+ const handleClick = (index) => {
+  setShowSubNavbar((prevIndex) => (prevIndex === index ? null : index));
+};
 
   return (
-    <nav className="navbar">
-      <ul className="navbar-nav">
-        <li className="nav-link" onClick={handleItemClick}>
-          Dashboard
-        </li>
-        <hr />
-        <li className="nav-link" onClick={handleItemClick}>
-          Operational
-          <div className={`navbar-sub ${showSubNavbar ? 'show' : ''}`}>
-            <span className="text-disabled">Operational</span>
-            <ul className="navbar-nav">
-              <li className="nav-link"><a href="http://" className="font-link active"> Request Items </a></li>
-              <li className="nav-link"><a href="http://" className="font-link"> Recieve Items </a></li>
-              <li className="nav-link"><a href="http://" className="font-link"> Stock Items </a></li>
-            </ul>
-          </div>
-        </li>
-        <li className="nav-link" onClick={handleItemClick}>Payment</li>
-        <li className="nav-link" onClick={handleItemClick}>Class Room</li>
-        <li className="nav-link" onClick={handleItemClick}>Students</li>
-        <li className="nav-link" onClick={handleItemClick}>Teachers</li>
-        <hr />
-        <li className="nav-link" onClick={handleItemClick}>Master Data</li>
-        <li className="nav-link" onClick={handleItemClick}>Reporting</li>
-      </ul>
+    <nav className="navbars">
+      <div className="navbar-wrapper">
+        <ul className="navbar-nav">
+          {MainMenu.map((menu, index) => (
+            <li key={index} className="nav-link text-light" onClick={() => handleClick(index)}>
+               <div className="navbar-name">
+              {menu.path != null ? (<><i className={menu.icon} ></i> <Link href={`${menu.path}`} className="text-decoration-none"> {menu.name}</Link></>): 
+              (<><i className={menu.icon} ></i> <span>{menu.name}</span></>)}
+              </div>
+              {menu.subMenu &&(
+                <div className={`navbar-sub ${showSubNavbar === index ? "show" : ""}`}>
+                    <ul className={`navbar-nav`}>
+                      {menu.subMenu.map((subMenu, subIndex)=>(
+                        <li key={subIndex}>
+                          <Link href={`${subMenu.path}`} className="nav-link"><span className="font-link">{subMenu.name}</span></Link>
+                        </li>
+                      ))}
+                    </ul>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
-}
+};
 
 export default Sidebar;
