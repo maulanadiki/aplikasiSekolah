@@ -21,7 +21,6 @@ function Layout({children}) {
             </div>
         </div>
         <div className="container-content">
-            ini dimana ?
             {children}
         </div>
       </div>
