@@ -122,6 +122,7 @@
     grid-template-columns: 30px 1fr;
     justify-content: center;
     align-items: center;
+    color: #f8f9fa;
 }
 
 /* sub navbar */
@@ -163,3 +164,8 @@
     width: calc(10/12*100%);
     padding: 10px;
 }
+.text-decoration-none{
+    text-decoration: none;
+}
+
+
