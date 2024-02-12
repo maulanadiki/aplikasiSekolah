@@ -14,12 +14,9 @@ const Sidebar: React.FC<> = () => {
   return segment[0];
  }
 
- const handleClick = (index) => {
-  console.log("click index ", index);
-  console.log("current path ", pathName);
-  console.log("current path ", firstPathName);
-  setShowSubNavbar((prevIndex) => (prevIndex === index ? null : index));
-};
+  const handleClick = (index: number) => {
+    setShowSubNavbar((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   return (
     <nav className={`${styles['navbars']}`}>
@@ -50,6 +47,14 @@ const Sidebar: React.FC<> = () => {
       </div>
     </nav>
 
+  );
+};
+
+export default Sidebar;
+
+
+
+
     // <nav className="navbars">
     //   <div className="navbar-wrapper">
     //     <ul className="navbar-nav">
@@ -75,7 +80,3 @@ const Sidebar: React.FC<> = () => {
     //     </ul>
     //   </div>
     // </nav>
-  );
-};
-
-export default Sidebar;

@@ -11,7 +11,7 @@
     background-color: var(--bs-gray-900);
     color: var(--light);
     overflow: auto;
-    border-right: solid 3px var(--bs-border-color-translucent);
+    /* border-right: solid 3px var(--bs-border-color-translucent); */
 }
 
 /* logo */
@@ -162,7 +162,6 @@
     margin-left: calc(2/12*100%);
     height: 100vh;
     width: calc(10/12*100%);
-    padding: 10px;
 }
 .text-decoration-none{
     text-decoration: none;
